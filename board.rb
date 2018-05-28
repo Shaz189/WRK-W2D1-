@@ -19,9 +19,10 @@ class Board
   end
   
   def move_piece(start_pos, end_pos)
-    debugger
     start_piece = @grid[start_pos[0]][start_pos[-1]]
     start_piece.move(end_pos)
+    @grid[end_pos[0]][end_pos[-1]] = start_piece
+    # @grid[start_pos[0]][start_pos[-1]] = @null_piece.pos
   end
   
   def get_end_input
@@ -30,7 +31,7 @@ class Board
       end_pos_row = gets.chomp.to_i
       puts "enter ending column"
       end_pos_col = gets.chomp.to_i
-      end_pos = [end_pos_row, end_pos_col]
+      end_pos = [end_pos_row, end_pos_col] 
       raise EndPosError.new("Invalid end position.") if false
     rescue EndPosError => err
       p err.message
