@@ -1,6 +1,6 @@
 require 'byebug'
 class Piece
-  attr_accessor :pos, :symbol, :color
+  attr_accessor :pos, :symbol, :color, :potential_moves
   def initialize(pos, color)
     @symbol = "P"#.colorize(:color => color)
     @pos = pos
