@@ -15,13 +15,13 @@ class Display
     looper
   end
 
-  # def looper
-  #   while @loop == false
-  #     render
-  #     @cursor_pos = @cursor.get_input
-  # 
-  #   end
-  # end
+  def looper
+    while @loop == false
+      render
+      @cursor_pos = @cursor.get_input
+
+    end
+  end
 
   def render
     system("clear")
@@ -40,12 +40,6 @@ class Display
       print "\n"
     end
   end
-
-  # def move
-  #   while nil
-  #
-  #   end
-  # end
 
 
 end

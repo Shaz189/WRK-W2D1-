@@ -1,6 +1,8 @@
 require 'byebug'
 require_relative 'pieces.rb'
 
+TOP_PIECES = [Rook, Knight, Bishop, Queen, King, Bishop, Knight, Rook]
+BOT_PIECES = [Rook, Knight, Bishop, King, Queen, Bishop, Knight, Rook]
 
 class Board
   attr_accessor :grid, :null_piece
@@ -12,17 +14,17 @@ class Board
   def create_board
     @grid = Array.new(8) {Array.new(8, null_piece)}
     @grid[0].each_index do |x|
-      @grid[0][x] = Piece.new([0, x])
+      @grid[0][x] = TOP_PIECES[x].new([0, x], :black)
     end
     @grid[1].each_index do |x|
-      @grid[1][x] = Pawn.new([1, x])
+      @grid[1][x] = Pawn.new([1, x], :black)
     end
 
     @grid[7].each_index do |x|
-      @grid[7][x] = Piece.new([7, x])
+      @grid[7][x] = BOT_PIECES[x].new([7, x], :white)
     end
     @grid[6].each_index do |x|
-      @grid[6][x] = Pawn.new([6, x])
+      @grid[6][x] = Pawn.new([6, x], :white)
     end
   end
 
