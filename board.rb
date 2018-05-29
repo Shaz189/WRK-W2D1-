@@ -27,18 +27,23 @@ class Board
   end
 
   def []=(pos, piece)
-    @grid[pos] = piece
+    # debugger
+    x,y = pos
+    @grid[x][y] = piece
   end
 
   def [](pos)
-    @grid[pos[0]][pos[1]]
+    # debugger
+    x,y = pos
+    @grid[x][y]
   end
 
   def move_piece(start_pos, end_pos)
-    start_piece = @grid[start_pos[0]][start_pos[1]]
-    @grid[end_pos[0]][end_pos[1]] = start_piece
-    start_piece.pos = [end_pos[0], end_pos[1]]
-    @grid[start_pos[0]][start_pos[1]] = @null_piece
+    # debugger
+    start_piece = self[start_pos]
+    self[end_pos] = start_piece
+    start_piece.pos = end_pos
+    self[start_pos] = @null_piece
   end
 
   def get_end_input
