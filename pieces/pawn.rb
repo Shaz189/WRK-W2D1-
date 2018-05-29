@@ -3,7 +3,7 @@ require_relative 'piece.rb'
 PAWN_MOVES = [[1,0]].freeze
 PAWN_ATTACK = [[1,1], [1,-1]].freeze
 
-class Pawn
+class Pawn < Piece
   attr_accessor :symbol, :pos, :color
 
 
