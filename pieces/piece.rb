@@ -5,7 +5,4 @@ class Piece
     @pos = pos
   end
   
-  def move(new_pos)
-    @pos = [new_pos[0], new_pos[-1]]
-  end
 end
